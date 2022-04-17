@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Screen</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+
+            background-color: rgb(27, 27, 27);
+        }
+
+        #menu{
+            width: 60%;
+            height: auto;
+            margin-left: 0;
+            margin-top: 0;
+        }
+
+        #buttons-wrapper{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 10vh;
+            left: 25vw;
+        }
+
+        #buttons-wrapper > button{
+
+            width: 12vw;
+            font-size: 3.5vh;
+            font-weight: bold;
+            height: 10vh;
+            border-width: 0;
+            margin-top: 9vh;
+            color: rgb(255, 255, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: url(../grey-button-removebg-preview.png);
+            background-size: 12vw;
+            background-repeat: no-repeat;
+        }
+
+        @keyframes start-game {
+
+            0%{
+                color: white;
+                background-color: rgb(0, 0, 0);
+                z-index: 1;
+            }
+
+            99.99%{
+                color: rgb(255, 255, 255, 0.001);
+                background-color:rgb(0, 0, 0, 0);
+                z-index: 1;
+            }
+
+            100%{
+                color: rgb(255, 255, 255, 0);
+                background-color:rgb(0, 0, 0, 0);
+                z-index: -1;
+            }
+            
+        }
+
+        #title{
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 10vh;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 60%;
+            height: 71%;
+            background-color: rgb(0, 0, 0);
+            z-index: 1;
+            animation-fill-mode: forwards;
+
+            animation-duration: 7s; 
+            animation-timing-function: ease-in-out; 
+            animation-delay: 0; 
+            animation-iteration-count: 1; 
+            animation-name: start-game; 
+        }
+    </style>
+</head>
+<body>
+    <!-- The video is not autoplaying -->
+    <div id="title">The Knight's Duty</div>
+    <video id="menu" src="../end-screen-1.mp4" type="video/mp4" playsinline autoplay muted loop></video>
+    <div id="buttons-wrapper">
+        <button id="btn1" onclick="location.href = './story-screen.html'; ">START</button>
+        <!-- <button id="btn2" onclick="window.close()">QUIT</button> -->
+        <!-- <button id="btn3">CREDITS</button> -->
+    </div>
+</body>
+</html>

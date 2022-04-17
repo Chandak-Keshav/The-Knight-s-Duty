@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss Level</title>
+    <style>
+*{
+            margin: 0;
+            /* overflow: hidden; */
+        }
+
+        body{
+            background-color: rgb(27, 27, 27);
+        }
+
+        canvas{
+            width: 80%;
+            height: auto;
+        }
+
+        #container{
+            width: 80%;
+            background-color: rgb(27, 27, 27);
+        }
+
+        #up-elements-wrap{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 800px;
+            height: 50px;
+            position: absolute;
+            top: 25px;
+            left: 5px; 
+            z-index: 2;
+        }
+
+        #up-elements-wrap > #player-hp{
+            background-color: rgb(255, 255, 0);
+            width: 45%;
+            height: 45%;
+        }
+
+        #up-elements-wrap > #enemy-hp{
+            background-color: rgb(255, 255, 0);
+            width: 45%;
+            height: 45%;
+        }
+
+        #up-elements-wrap > .timer{
+            background-color: palevioletred;
+            width: 10%;
+            height: 100%;
+        }
+
+        #health-decrease-effect{
+            position: absolute;
+            background-color: rgb(211, 15, 15);
+            top: 39px;
+            width: 800px;
+            height: calc(0.45*(50px));
+            left: 5px;
+            z-index: 1;
+        }
+
+        #resolve-game{
+            z-index: -1;
+            height: 576px;
+            width: 64%;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            color: white;
+            font-size: 7vh;
+            text-align: center;
+            font-weight: bold;
+            
+        }
+
+        #speaker{
+
+            margin-top: -5px;
+            width: 64%;
+            height: 30px;
+            color:black;
+            background-color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #dialog-area{
+
+            /* margin-top: 10px; */
+            height: calc(calc(100vh - 576px) - 10px);
+            width: 64%;
+            background-color: black;
+            color: white;
+            font-size: 23px;
+            height: 30vh;
+
+            /* z-index: -1 */
+        }
+
+        img{
+            position: absolute;
+            right: 0;
+            width: 36%;
+            top:0;
+            margin-top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="resolve-game"></div>
+        <div id="health-decrease-effect"></div>
+        <div id="up-elements-wrap">
+            <div id="player-hp" class="health-bar"></div>
+            <div class="timer"></div>
+            <div id="enemy-hp" class="health-bar"></div>
+        </div>
+        <canvas id="game-screen"></canvas>
+    </div>
+    <div id="speaker">...</div>
+    <div id="dialog-area"></div>
+    <audio autoplay="true" loop="true"
+        src="../2.mp3" type="audio/mp3">
+    <embed src="../2.mp3" type="audio/mp3" hidden="true">
+    </audio>
+    <img src="../instruct.png" alt="">
+    <script src="../src/banditLevel.js"></script>
+</body>
+</html>

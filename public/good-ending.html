@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>death screen</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+            background-color: rgb(27, 27, 27);
+        }
+
+        #good-ending-screen{
+            width: 35%;
+            height: auto;
+            margin-left: 18vw;
+            margin-top: 0;
+        }
+
+        @keyframes death-screen-appears {
+            0%  {
+                color: rgb(255, 255, 255, 0);
+                background-color: rgb(10, 10, 10, 0);
+            }
+
+            50%{
+                color: rgb(255, 255, 255, 0.1);
+                background-color: rgb(10, 10, 10, 0.4);
+            }
+
+            100%{
+                color:rgb(255, 255, 255, 0.5);
+                background-color: rgb(10, 10, 10, 1);
+            }
+        }
+
+        #good-ending-menu{
+            position: absolute;
+            width: 70%;
+            height: 73.6%;
+            /* background-color: rgb(10, 10, 10, 0); */
+            top: 0;
+            left: 0;
+            z-index: 5;
+            animation-duration: 10s; 
+            animation-timing-function: ease-in-out; 
+            animation-delay: 0s; 
+            animation-iteration-count: 1; 
+            animation-name: death-screen-appears; 
+            animation-fill-mode: forwards;
+        }
+
+        h1{
+            color: inherit;
+            z-index: 5;
+            text-align: center;
+            font-size: 7vh;
+            display: block;
+            margin-top: 25vh;
+        }
+
+        @keyframes btns-appear-death{
+
+            0%   {
+                color:rgb(0, 0, 0, 0);
+                background: rgb(0, 0, 0, 0);
+
+            }
+
+            50%{
+
+                color: rgb(0, 0, 0, 0.2);
+            }
+
+            100% {
+                color: rgb(0, 0, 0, 0.8);
+                background: white;
+            }
+        }
+
+        #buttons-wrapper{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 30vh;
+            left: 30vw;
+        }
+
+
+        #buttons-wrapper > button{
+
+            width: 12vw;
+            font-size: 3vh;
+            font-weight: bold;
+            height: 5vh;
+            border-width: 0;
+            margin-top: 7vh;
+            color: rgb(255, 255, 255, 0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background: rgb(0, 0, 0, 0);
+            border-radius: 2%;
+            
+            animation-duration: 2s; 
+            animation-timing-function: ease-in-out; 
+            animation-delay: 10s; 
+            animation-iteration-count: 1; 
+            animation-name: btns-appear-death; 
+            animation-fill-mode: forwards;
+        }
+
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <video src="../menu-screen-video.mp4" id="good-ending-screen" autoplay muted loop></video>
+    <div id="good-ending-menu">
+        <h1>You saved your Village!</h1>
+        <div id="buttons-wrapper">
+            
+        </div>
+    </div>
+    <audio autoplay="true" loop="true"
+        src="../good-ending-song.mp3" type="audio/mp3">
+    <embed src="../good-ending-song.mp3" type="audio/mp3" hidden="true">
+    </audio>
+</body>
+</html>
