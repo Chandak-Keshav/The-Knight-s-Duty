@@ -1,0 +1,2 @@
+# The-Knight-s-Duty
+The story revolves around an adoscelent,who is going to fight enemies to protect his village.He was undergoing training to become a powerful knight one day but the circumstances made him a dutiful knight. The quest is to defeat the boss and save the village and if succeeds in doing so,he fulfills "The Knight's Duty".  All the game controls and flow of game is given in project_report.docx
