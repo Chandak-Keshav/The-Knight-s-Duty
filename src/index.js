@@ -820,10 +820,10 @@ function resolveGame(person1, person2){
 
         if(invertKey){
 
-            enemy.switchSprite('deathInvert');
+            person2.switchSprite('deathInvert');
         }
 
-        else enemy.switchSprite('death');
+        else person2.switchSprite('death');
         setTimeout(()=> window.location.href = '../public/bandit_level.html', 2000);
 
     }
@@ -840,7 +840,7 @@ function resolveGame(person1, person2){
                       break;
         }
         
-        setTimeout(()=> window.location.href = '../public/bandit_level.html' ,2000);
+        setTimeout(()=> window.location.href = '../public/death-screen.html' ,2000);
     }
 }
 
